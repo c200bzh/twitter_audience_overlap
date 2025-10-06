@@ -60,12 +60,6 @@ All output files are organized in the `twitter_files/` directory:
 └── README.md
 ```
 
-**Benefits of this structure:**
-- ✅ **Organized**: Each step's output in its own folder
-- ✅ **Clean**: Root directory stays uncluttered
-- ✅ **Scalable**: Easy to process multiple accounts
-- ✅ **Traceable**: Clear data lineage through folder structure
-
 
 ## 🚀 Quick Start Guide
 
@@ -100,8 +94,7 @@ python 1.get_retweets.py tweet_id_ethstatus.csv
 python 2.get_engaged_accounts.py ethstatus
 
 # Step 3: Get what engaged users retweet
-
-
+python 3.get_user_retweets.py ethstatus
 
 # Step 4: Analyze and rank retweeted accounts
 python 4.get_retweeted_accounts.py ethstatus
@@ -174,6 +167,7 @@ python 1.get_retweets.py tweet_id_ethstatus.csv
 **Input**: CSV file with tweet IDs (from Script 0, reads from `twitter_files/0_original_tweets/`)
 **Output**: `twitter_files/1_retweeting_users/{account}_{tweet_id}_retweeting_users.csv` (one file per tweet)
 **What it does**:
+- Uses the [`GET /2/tweets/:id/retweeted_by`](https://docs.x.com/x-api/posts/get-reposted-by) endpoint
 - Reads tweet IDs from input CSV
 - For each tweet, fetches ALL users who retweeted it (handles pagination)
 - Saves user details (ID, username, name, bio, location, etc.)
