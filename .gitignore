@@ -1,0 +1,35 @@
+# Twitter data files
+twitter_files/**/*.csv
+
+# Keep the directory structure
+!twitter_files/
+!twitter_files/0_original_tweets/
+!twitter_files/1_retweeting_users/
+!twitter_files/2_engaged_accounts/
+!twitter_files/3_user_retweets/
+!twitter_files/4_retweeted_accounts/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ven/
+env/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
